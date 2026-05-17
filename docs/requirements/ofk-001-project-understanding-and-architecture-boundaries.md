@@ -6,7 +6,7 @@ state: defined
 
 ## Context
 
-OpenFlowKit provides instructions, agents, and workflow building blocks for AI-assisted automation of development and team processes. The project is designed for pragmatic use in real software projects and is intended to structure recurring engineering tasks without prescribing a closed automation system.
+OpenFlowKit provides instructions, agents, and workflow building blocks for AI-assisted automation of development and team processes. The project is designed for pragmatic use in real software projects and is intended to structure recurring engineering tasks without prescribing a closed automation system, installer, CLI, or runtime.
 
 The goal is to make AI-assisted workflow automation easier for development teams to use. OpenFlowKit describes reusable workflows, roles, and operating instructions that are primarily formulated for OpenCode and can be transferred into other target environments during installation.
 
@@ -57,8 +57,10 @@ OpenFlowKit is provided as a public source project hosted on GitHub. The documen
 **Description:** OpenFlowKit must not be understood as a deterministic plugin system, security framework, sandbox system, central governance mechanism, or complete agent operating system.  
 **Acceptance Criteria:**
 - OpenFlowKit does not define a stable plugin runtime with guaranteed execution semantics.
+- OpenFlowKit does not provide a CLI or installer application.
 - OpenFlowKit does not provide a security architecture, policy engine, or protection layer.
 - OpenFlowKit does not isolate processes, tools, or agents.
 - OpenFlowKit does not guarantee reproducible LLM results.
 - OpenFlowKit does not replace a platform for scheduling, tool orchestration, permissions, or runtime management.
+- OpenFlowKit does not centrally manage third-party target projects.
   **References:** Project context

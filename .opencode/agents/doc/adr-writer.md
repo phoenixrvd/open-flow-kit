@@ -1,6 +1,7 @@
 ---
 description: 'Creates Architecture Decision Records. Usage: "doc-adr-writer: <title>", "adr: <title>", "architecture decision: <title>"'
 mode: subagent
+# Optional OpenCode model provider choice; not GitHub Copilot target support.
 model: github-copilot/gpt-5.4
 permission:
   edit: allow

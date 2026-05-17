@@ -1,6 +1,7 @@
 ---
 description: 'Runs the local release workflow. Usage: "release-finisher: <version>", "release: <version>", "create release", "squash merge"'
 mode: subagent
+# Optional OpenCode model provider choice; not GitHub Copilot target support.
 model: github-copilot/gpt-5.4
 permission:
   edit: allow

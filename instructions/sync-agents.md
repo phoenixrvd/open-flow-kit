@@ -2,6 +2,8 @@
 
 Sync selected OpenFlowKit agents into a target project. Work deterministically and ask only when no safe single choice exists.
 
+These instructions are executed by the LLM agent. OpenFlowKit itself is not an installer, CLI, runtime system, security framework, or central manager for third-party projects.
+
 ## Inputs
 
 Infer these from context when possible; otherwise ask:
@@ -9,7 +11,7 @@ Infer these from context when possible; otherwise ask:
 - `source_root`: local OpenFlowKit path, Git repository URL, or raw instruction URL.
 - `target_root`: target project root.
 - `agent_selection`: agent names, relative paths, or groups, for example `reviewer`, `doc/adr-writer`, `code`, `doc`, `release`.
-- `target_tool`: `opencode`, `claude-code`, `github-copilot`, or `other`.
+- `target_tool`: `opencode`, `claude-code`, optional experimental `github-copilot`, or `other`.
 
 ## Resolve Source
 
@@ -51,7 +53,7 @@ Use `target_tool` when provided. Otherwise inspect `target_root`:
 - `.opencode/` -> OpenCode
 - `.claude/agents/` -> Claude Code
 - `.claudcode/agents/` -> Claude Code legacy
-- `.github/` -> GitHub Copilot, only when one matching Copilot structure is clear
+- `.github/` -> GitHub Copilot only when explicitly requested; this target is optional, experimental, and outside the initial scope
 
 Ask when multiple tools match or none match.
 
@@ -71,6 +73,8 @@ Claude Code:
 
 GitHub Copilot:
 
+GitHub Copilot target support is optional, experimental, and outside the initial OpenFlowKit scope. Do not present Copilot-specific conversion as a required part of installation.
+
 - Use the existing Copilot structure under `<target_root>/.github/`.
 - Convert to the existing local Copilot format when examples exist.
 - Ask for target path or format when unclear.
@@ -82,6 +86,7 @@ Other:
 ## Conflicts And Writing
 
 Before writing, create missing target directories and stay inside `target_root`.
+Do not manage the target project beyond the selected agent files and directories.
 
 A conflict exists when a target file has the same filename, same agent name, or clearly the same purpose. For each conflict, ask for exactly one action:
 

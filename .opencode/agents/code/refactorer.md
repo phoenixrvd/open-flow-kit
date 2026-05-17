@@ -1,6 +1,7 @@
 ---
 description: 'Refactoring executor. Active ONLY for: "code-refactorer:", "refactor:", "refactoring:", "revise:", "improve:"'
 mode: subagent
+# Optional OpenCode model provider choice; not GitHub Copilot target support.
 model: github-copilot/claude-sonnet-4.6
 permission:
   edit: allow

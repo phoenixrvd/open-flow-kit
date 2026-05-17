@@ -18,6 +18,8 @@ The agents are functional, but intentionally workflow-specific. They are not a u
 
 Agents are installed locally in each project. This allows them to be versioned in the target project and adapted to its rules.
 
+OpenFlowKit is not an installer, CLI, runtime system, security framework, or central manager for third-party projects. Installation and updates are performed by the LLM agent that reads and follows the provided instructions.
+
 With OpenCode, synchronization can be started directly through the existing instruction. OpenCode should first read `instructions/sync-agents.md` and then execute the steps described there.
 
 Example prompt for OpenCode:

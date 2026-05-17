@@ -1,6 +1,7 @@
 ---
 description: 'Creates local Git commits. Usage: "release-committer:", "commit:", "create commit", "commit changes"'
 mode: subagent
+# Optional OpenCode model provider choice; not GitHub Copilot target support.
 model: github-copilot/gpt-5.4-mini
 temperature: 0.1
 permission:

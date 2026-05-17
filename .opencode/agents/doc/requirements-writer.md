@@ -1,6 +1,7 @@
 ---
 description: 'Creates or updates requirements. Usage: "doc-requirements-writer: <topic>", "requirements: <topic>", "requirement: <topic>"'
 mode: subagent
+# Optional OpenCode model provider choice; not GitHub Copilot target support.
 model: github-copilot/gpt-5.4
 permission:
   edit: allow

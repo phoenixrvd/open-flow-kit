@@ -3,6 +3,7 @@
 ## Purpose
 
 OpenFlowKit contains reusable OpenCode agents and instructions for recurring workflow automation.
+It is not an installer, CLI, runtime system, security framework, or central manager for third-party projects.
 
 ## Structure
 

@@ -6,9 +6,9 @@ state: defined
 
 ## Context
 
-OpenFlowKit building blocks are adopted into target projects so teams can use and adapt them there in a project-specific way. Installation places artifacts in the target project without imposing requirements on the target project's own versioning or governance.
+OpenFlowKit building blocks are adopted into target projects so teams can use and adapt them there in a project-specific way. Installation is performed by an LLM agent following OpenFlowKit instructions and places artifacts in the target project without imposing requirements on the target project's own versioning or governance.
 
-The initial installation supports OpenCode as a direct target format and Claude Code as a converted target format. GitHub Copilot is not a mandatory supported target format in the initial version.
+The initial installation supports OpenCode as a direct target format and Claude Code as a converted target format. GitHub Copilot target support is optional, experimental, and outside the initial scope.
 
 ## Assumptions
 
@@ -31,19 +31,21 @@ The initial installation supports OpenCode as a direct target format and Claude 
 
 ### Target Tool Conversion
 **Type:** Functional  
-**Description:** An installer or corresponding OpenCode agent must transfer OpenCode agents into the target project's target format when needed.  
+**Description:** The installing LLM agent must transfer OpenCode agents into the target project's target format when needed.  
 **Acceptance Criteria:**
 - For OpenCode target projects, agents are copied into the OpenCode-compliant target structure.
 - For Claude Code, role description, semantic intent, and work instructions are transferred into the target format.
 - The technical representation may be adapted to the target tool.
+- OpenFlowKit does not provide a standalone installer or CLI for this transfer.
   **References:** OFK-002
 
 ### Initial Target Format Scope
 **Type:** Constraint  
-**Description:** The initial version does not need to support GitHub Copilot as a target format.  
+**Description:** The initial version does not need to support GitHub Copilot as a target format. Any Copilot handling is optional, experimental, and outside the initial scope.  
 **Acceptance Criteria:**
 - GitHub Copilot is not a mandatory supported target format in the initial version.
 - Later support for GitHub Copilot remains possible, but is not part of this requirement.
+- Copilot-specific implementation logic must not be presented as a mandatory installation or update path.
   **References:** Target tool conversion
 
 ### Conflict Handling During Installation

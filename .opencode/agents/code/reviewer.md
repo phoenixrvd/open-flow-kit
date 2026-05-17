@@ -1,6 +1,7 @@
 ---
 description: 'Reviews code against project guidelines. Usage: "code-reviewer: <file>", "review-code: <file>" or "review: <file>"'
 mode: subagent
+# Optional OpenCode model provider choice; not GitHub Copilot target support.
 model: github-copilot/claude-sonnet-4.6
 temperature: 0.1
 permission:
