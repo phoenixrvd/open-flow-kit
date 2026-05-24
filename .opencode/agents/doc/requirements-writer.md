@@ -15,6 +15,7 @@ permission:
 - No duplicates and no partial repetition.
 - One source equals one truth.
 - Write all text in English.
+- Use only these requirement states: `draft`, `defined`, `implemented`, `removed`, `rejected`.
 
 ## Template
-Use the existing requirements template. Otherwise: context, assumptions, open questions, requirements; missing sections = "None".
+Use `docs/requirements/TEMPLATE.md` and preserve its structure strictly; missing sections = "None".

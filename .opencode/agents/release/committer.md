@@ -61,7 +61,7 @@ Allowed types:
 - `fix:`
 - `add:`
 
-Write the description briefly, clearly, and descriptively.
+Write the commit message in English. Keep the description brief, clear, and descriptive.
 
 ## Output
 
