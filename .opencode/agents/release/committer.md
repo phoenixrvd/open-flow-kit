@@ -1,8 +1,6 @@
 ---
 description: 'Creates local Git commits. Usage: "release-committer:", "commit:", "create commit", "commit changes"'
 mode: subagent
-model: github-copilot/gpt-5.4-mini
-temperature: 0.1
 permission:
   edit: deny
   bash: allow
@@ -17,19 +15,16 @@ Create local Git commits when explicitly requested.
 - Never push.
 - Never edit files.
 - Never use destructive Git commands.
+- Never amend existing commits.
 - Never commit secrets.
 - Commit messages must be English.
-- Use: `<type>: <description>`
-- Allowed types: `feature`, `fix`, `refactor`, `add`
-- Split unrelated changes into separate commits.
-- Create multiple commits when changes have different purposes.
+- Follow the project's commit convention. Otherwise use `<type>: <description>` with `feature`, `fix`, `refactor`, or `add`.
+- Create separate commits for changes with different purposes.
 
 ## Workflow
 
-1. Inspect Git status and diffs.
+1. Inspect Git status, diffs, and recent commit messages.
 2. Stop if there are no changes.
-3. Group changes by purpose.
-4. For each group:
-   - stage only relevant files
-   - create one commit
+3. Group changes by purpose and stage only relevant, understood files.
+4. Create one local commit per purpose.
 5. Report commit subjects, hashes, and remaining Git status.
