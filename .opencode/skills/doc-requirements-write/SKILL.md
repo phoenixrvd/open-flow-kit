@@ -1,12 +1,12 @@
 ---
-description: 'Creates or updates requirements. Usage: "doc-requirements-writer: <topic>", "requirements: <topic>", "requirement: <topic>"'
-mode: subagent
-permission:
-  edit: allow
-  bash: deny
+name: doc-requirements-write
+description: 'Requirements documentation guidance. Use ONLY for: "doc-requirements-write: <topic>", "requirements: <topic>", or "requirement: <topic>".'
 ---
 
+# Requirements Write
+
 ## Rules (BLOCKER)
+
 - Use existing requirements and provided context as sources; do not invent facts.
 - Requirements describe WHAT, not HOW.
 - Each requirement describes one verifiable need.
@@ -17,4 +17,5 @@ permission:
 - Change requirement documentation only.
 
 ## Template
-Use `docs/requirements/TEMPLATE.md` and preserve its structure strictly; missing sections = "None".
+
+Use [TEMPLATE.md](TEMPLATE.md) and preserve its structure strictly; missing sections = "None".

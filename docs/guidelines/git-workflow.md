@@ -1,7 +1,7 @@
 # Git Workflow
 
-The Git rules are split by workflow step and agent file:
+The Git rules are split by workflow step and skill file:
 
-- Start work on a new version: `.opencode/agents/release/starter.md`
-- Commit intermediate work: `.opencode/agents/release/committer.md`
-- Prepare a release for publication: `.opencode/agents/release/finisher.md`
+- Start work on a new version: `.opencode/skills/release-start/SKILL.md`
+- Commit intermediate work: `.opencode/skills/release-commit/SKILL.md`
+- Prepare a release for publication: `.opencode/skills/release-finish/SKILL.md`

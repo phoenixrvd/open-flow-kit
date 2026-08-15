@@ -8,7 +8,7 @@ state: defined
 
 OpenFlowKit building blocks are adopted into target projects so teams can use and adapt them there in a project-specific way. Installation is performed by an LLM agent following OpenFlowKit instructions and places artifacts in the target project without imposing requirements on the target project's own versioning or governance.
 
-The initial installation supports OpenCode as a direct target format and Claude Code as a converted target format. GitHub Copilot target support is optional, experimental, and outside the initial scope.
+The initial installation supports OpenCode skills as a direct target format and Claude Code skills as a converted target format. GitHub Copilot target support is optional, experimental, and outside the initial scope.
 
 ## Assumptions
 
@@ -20,21 +20,23 @@ The initial installation supports OpenCode as a direct target format and Claude 
 
 ## Requirements
 
-### Project-Local Agent Storage
+### Project-Local Skill Storage
 **Type:** Functional  
-**Description:** OpenFlowKit must provide agents so they can be stored locally in target projects and bound to the respective codebase.  
+**Description:** OpenFlowKit must provide skills so they can be stored locally in target projects and bound to the respective codebase.
 **Acceptance Criteria:**
-- Agents are stored in the target project.
-- The target project decides whether and how stored agents are versioned.
+- Skills are stored in the target project.
+- The target project decides whether and how stored skills are versioned.
 - OpenFlowKit does not take over version control for third-party target project artifacts.
   **References:** OFK-002, installation concept
 
 ### Target Tool Conversion
 **Type:** Functional  
-**Description:** The installing LLM agent must transfer OpenCode agents into the target project's target format when needed.  
+**Description:** The installing LLM agent must transfer OpenCode skills into the target project's target format when needed.
 **Acceptance Criteria:**
-- For OpenCode target projects, agents are copied into the OpenCode-compliant target structure.
-- For Claude Code, role description, semantic intent, and work instructions are transferred into the target format.
+- For OpenCode target projects, skills are copied into the OpenCode-compliant target structure.
+- For Claude Code, purpose, semantic intent, work instructions, and local templates are transferred into the target format.
+- The destination `SKILL.md` has valid frontmatter whose `name` matches its skill directory.
+- Local templates referenced by a skill are copied or reconciled with the target skill.
 - The technical representation may be adapted to the target tool.
 - OpenFlowKit does not provide a standalone installer or CLI for this transfer.
   **References:** OFK-002
@@ -50,16 +52,16 @@ The initial installation supports OpenCode as a direct target format and Claude 
 
 ### Conflict Handling During Installation
 **Type:** Functional  
-**Description:** The installing agent must check existing agents in the target project before copying and explicitly handle name conflicts.  
+**Description:** The installing agent must check existing skills in the target project before copying and explicitly handle name conflicts.
 **Acceptance Criteria:**
-- Before copying, the target directory is checked for agents with identical names.
-- Existing agents are not overwritten silently.
+- Before copying, the target directory is checked for skills with identical names.
+- Existing skills are not overwritten silently.
 - For name conflicts, the user decides between replacement and merging.
-  **References:** Project-local agent storage
+  **References:** Project-local skill storage
 
 ### Semantic Merging
 **Type:** Functional  
-**Description:** When merging existing agents, the installing agent must merge semantically instead of only combining line by line.  
+**Description:** When merging existing skills, the installing agent must merge semantically instead of only combining line by line.
 **Acceptance Criteria:**
 - Purpose, rules, role description, and concrete work instructions are evaluated.
 - The existing target version has priority when it contains project-specific adaptations.

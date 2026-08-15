@@ -2,13 +2,13 @@
 state: defined
 ---
 
-# OFK-002: Source Structure and OpenCode Primary Format
+# OFK-002: Source Structure and OpenCode Primary Skill Format
 
 ## Context
 
-OpenFlowKit provides reusable agents, instructions, and workflow building blocks from a user-specified source. This source must have a traceable structure so installation, updates, and conversion can operate with functional clarity.
+OpenFlowKit provides reusable skills, instructions, and workflow building blocks from a user-specified source. This source must have a traceable structure so installation, updates, and conversion can operate with functional clarity.
 
-OpenCode is the primary format for agents in OpenFlowKit. Other target formats can be derived from this source, but they are not the leading representation in the source project.
+OpenCode is the primary format for skills in OpenFlowKit. Other target formats can be derived from this source, but they are not the leading representation in the source project.
 
 ## Assumptions
 
@@ -24,17 +24,17 @@ OpenCode is the primary format for agents in OpenFlowKit. Other target formats c
 **Type:** Functional  
 **Description:** Installation and updates must obtain content from the source entered by the user.  
 **Acceptance Criteria:**
-- The user specifies the source from which agents, instructions, and workflow building blocks are read.
+- The user specifies the source from which skills, instructions, and workflow building blocks are read.
 - Installation does not implicitly use a local working copy as a functional prerequisite.
 - The source is used as the starting point for placement in the target project.
   **References:** OFK-001, installation concept
 
-### OpenCode as Primary Format
+### OpenCode as Primary Skill Format
 **Type:** Constraint  
-**Description:** OpenFlowKit must use OpenCode as the primary format for agents.  
+**Description:** OpenFlowKit must use OpenCode as the primary format for skills.
 **Acceptance Criteria:**
-- Agents are maintained under the OpenCode-compliant `.opencode/agents/` structure.
-- The earlier generic top-level `agents/` directory is not part of the target structure.
+- Skills are maintained under the OpenCode-compliant `.opencode/skills/<skill-name>/` structure.
+- No obsolete agent source structure is part of the target structure.
 - Derived target formats may adapt the technical representation, but must originate from the OpenCode source.
   **References:** OFK-001
 
@@ -43,9 +43,9 @@ OpenCode is the primary format for agents in OpenFlowKit. Other target formats c
 **Description:** The entered OpenFlowKit source must contain the expected project structure.  
 **Acceptance Criteria:**
 - Requirements are located under `docs/requirements/`.
-- The synchronization instruction is located under `instructions/sync-agents.md`.
-- OpenCode agent sources are grouped in direct category subdirectories under `.opencode/agents/`.
-- Exported OpenCode target agents are written directly under `.opencode/agents/`.
+- The synchronization instruction is located under `instructions/sync-skills.md`.
+- OpenCode skill sources are direct child directories of `.opencode/skills/`, each containing `SKILL.md`.
+- Exported OpenCode target skills are written to `.opencode/skills/<skill-name>/`.
 - No project-specific OpenCode plugin dependencies are required.
-- Agent sources are Markdown files with OpenCode frontmatter.
+- Skill sources contain `SKILL.md` files with OpenCode skill frontmatter.
   **References:** Project structure of the entered source

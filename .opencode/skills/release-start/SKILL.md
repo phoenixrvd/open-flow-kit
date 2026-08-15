@@ -1,12 +1,9 @@
 ---
-description: 'Prepares work on a new version. Usage: "release-starter", "release-starter: v1.29", "new-version", "new version"'
-mode: subagent
-permission:
-  edit: deny
-  bash: allow
+name: release-start
+description: 'New release branch workflow. Use ONLY for: "release-start", "release-start: v1.29", "new-version", or "new version".'
 ---
 
-## Task
+# Release Start
 
 Prepare a local work branch for the next version.
 

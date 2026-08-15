@@ -5,14 +5,17 @@ state: draft | defined | implemented | removed | rejected
 # OFK-XXX: <Title>
 
 ## Context
+
 ...
 
 ## Assumptions
+
 - ...
   or
 - None
 
 ## Open Questions
+
 - ...
   or
 - None
@@ -20,8 +23,8 @@ state: draft | defined | implemented | removed | rejected
 ## Requirements
 
 ### <Title>
-**Type:** Functional | Non-functional | Constraint  
-**Description:** The system must ...  
+**Type:** Functional | Non-functional | Constraint
+**Description:** The system must ...
 **Acceptance Criteria:**
 - ...
 - ...

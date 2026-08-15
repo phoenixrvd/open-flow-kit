@@ -1,12 +1,9 @@
 ---
-description: 'Creates local Git commits. Usage: "release-committer:", "commit:", "create commit", "commit changes"'
-mode: subagent
-permission:
-  edit: deny
-  bash: allow
+name: release-commit
+description: 'Local Git commit workflow. Use ONLY for: "release-commit:", "commit:", "create commit", or "commit changes".'
 ---
 
-## Task
+# Release Commit
 
 Create local Git commits when explicitly requested.
 
