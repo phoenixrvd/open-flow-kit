@@ -1,6 +1,9 @@
 ---
 name: release-finish
-description: 'Local release finishing workflow. Use ONLY for: "release-finish: <version>", "release: <version>", "create release", or "squash merge".'
+description: 'Release finishing workflow.'
+slash: true
+metadata:
+  opencode/autoinvoke: false
 ---
 
 # Release Finish

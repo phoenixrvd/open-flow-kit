@@ -2,7 +2,7 @@
 state: draft
 ---
 
-# ADR-XXX: <Title>
+# <PROJECT>-ADR-XXX: <Title>
 
 ## Status
 
